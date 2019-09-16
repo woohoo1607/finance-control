@@ -1,0 +1,5 @@
+.App {background: url("../img/background.jpg") no-repeat fixed; color: #fff;}
+.finance {width: 1100px;}
+.balance {width:400px; margin: 0 auto; text-align: center;}
+.spending {width:400px; margin: 0 auto; text-align: center;}
+.incoming {width:400px; margin: 0 auto; text-align: center;}
