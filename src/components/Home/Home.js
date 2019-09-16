@@ -14,13 +14,14 @@ class Home extends React.Component {
 
 render() {
                
-    return (<>
+    return (
+            <div className="center">
                 <AddTransaction addData={this.props.addData}/>
                 <div className={styles.finance}>
                     {this.props.home.data.map(transaction => <TransactionCard key={transaction.id} refill={transaction.refill}
-                    category={transaction.category} sum={transaction.sum} />)}
+                    category={transaction.category} sum={transaction.sum} />).reverse()}
                 </div>
-            </>
+            </div>
             );
 
 };

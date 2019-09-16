@@ -20,3 +20,7 @@ a:hover {text-decoration:none;}
 /*-------------------------------------   word-wrap: break-word;  */
 
 .App {background: url(img/background.jpg); background-size: cover; background-attachment: fixed;}
+header {height: 80px;}
+.logo {padding-top: 15px;}
+.center {width: 1170px; margin: 0 auto;}
+.logo {float: left; height: 80px;}

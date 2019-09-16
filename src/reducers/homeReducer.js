@@ -2,6 +2,9 @@
 
 const SET_INVOICE = "SET_INVOICE";
 const ADD_DATA = "ADD_DATA";
+const ADD_CATEGORY = "ADD_CATEGORY";
+const PUT_CATEGORY = "PUT_CATEGORY";
+const DELETE_CATEGORY = "DELETE_CATEGORY";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 
@@ -10,6 +13,10 @@ let initialState = {
            {id: 1, refill: false, category: "Film", sum: 400},
            {id: 2, refill: false, category: "Food", sum: 300},
            {id: 3, refill: false, category: "Clothes", sum: 730}],
+    category: [{id: 0, name: "Food", categoryType: "spending"},
+               {id: 1, name: "The salary", categoryType:"incoming"},
+               {id: 2, name: "Film", categoryType:"spending"},
+               {id: 3, name: "Clothes", categoryType:"spending"}],
     isFetching: false
 };
 
@@ -22,6 +29,32 @@ const filmsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 data: [...action.data]
+            };
+        }
+        case ADD_CATEGORY:
+        {
+            let allId = ...state.category.map{id => id=id};
+            let newId = Math.max.apply(Math, allId)+1;
+            console.log(newId);
+             
+            
+            return {
+                ...state,
+                category: [...state.category, ...[action.category]]
+            };
+        }
+        case PUT_CATEGORY:
+        {
+            return {
+                ...state,
+                category: [...state.category, ...[action.category]]
+            };
+        }
+        case DELETE_CATEGORY:
+        {
+            return {
+                ...state,
+                category: [...state.category, ...[action.category]]
             };
         }
         case ADD_DATA:
@@ -47,6 +80,9 @@ export const setInvoice = (data) =>
 
 export const addData = (data) =>
     ({type: ADD_DATA, data: data});
+
+export const addCategory = (data) =>
+    ({type: ADD_CATEGORY, data: data});
 
 export const toggleIsFetching = (isFetching) =>
     ({type: TOGGLE_IS_FETCHING, isFetching});
