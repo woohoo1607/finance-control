@@ -1,0 +1,18 @@
+.categoryForm {width: 100%; display: flex; flex-wrap: wrap; justify-content: center;}
+
+@media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
+
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 911px) { /* 768<width<979 main 768*/
+
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 767px) { /* 480<width<767 main 480*/
+
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 479px) { /* 320<width<479 main 320*/
+
+    
+}

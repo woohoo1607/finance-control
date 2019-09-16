@@ -6,14 +6,15 @@ import styles from './Home.module.css';
 
 class Home extends React.Component {
 
-/*componentDidUpdate(prevProps, prevState) {
-    if (prevProps.films.currentPage !== this.props.films.currentPage) {
-            window.scrollTo(0,0);
-        }
-}*/
+countBalance = (start, end, acc) => {
+    if(start>=end)
+        return acc;
+    acc.push(start);
+    return this.addPages(start+1, end, acc);
+}
 
 render() {
-               
+    
     return (
             <div className="center">
                 <AddTransaction addData={this.props.addData}/>

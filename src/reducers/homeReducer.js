@@ -33,11 +33,10 @@ const filmsReducer = (state = initialState, action) => {
         }
         case ADD_CATEGORY:
         {
-            let allId = state.category.map(id => id=id);
+            let allId = [...state.category.map(id => id=id.id)];
             let newId = Math.max.apply(Math, allId)+1;
-            console.log(newId);
-             
-            
+            action.category.id = newId;
+
             return {
                 ...state,
                 category: [...state.category, ...[action.category]]
@@ -45,20 +44,29 @@ const filmsReducer = (state = initialState, action) => {
         }
         case PUT_CATEGORY:
         {
+            let newCategory = [...state.category];
+            let objIndex = newCategory.findIndex(obj => obj.id === action.category.id);
+            newCategory[objIndex] = action.category;
             return {
                 ...state,
-                category: [...state.category, ...[action.category]]
+                category: [...newCategory]
             };
         }
         case DELETE_CATEGORY:
         {
+            let newCategory = [...state.category];
+            let objIndex = newCategory.findIndex(obj => obj.id === action.category.id);
+            newCategory.splice(objIndex, 1);
             return {
                 ...state,
-                category: [...state.category, ...[action.category]]
+                category: [...newCategory]
             };
         }
         case ADD_DATA:
-        {
+        {   
+            let allId = [...state.data.map(id => id=id.id)];
+            let newId = Math.max.apply(Math, allId)+1;
+            action.data.id = newId;
             return {
                 ...state,
                 data: [...state.data, ...[action.data]]
@@ -81,8 +89,14 @@ export const setInvoice = (data) =>
 export const addData = (data) =>
     ({type: ADD_DATA, data: data});
 
-export const addCategory = (data) =>
-    ({type: ADD_CATEGORY, data: data});
+export const addCategory = (category) =>
+    ({type: ADD_CATEGORY, category: category});
+
+export const putCategory = (category) =>
+    ({type: PUT_CATEGORY, category: category});
+
+export const deleteCategory = (category) =>
+    ({type: DELETE_CATEGORY, category: category});
 
 export const toggleIsFetching = (isFetching) =>
     ({type: TOGGLE_IS_FETCHING, isFetching});
