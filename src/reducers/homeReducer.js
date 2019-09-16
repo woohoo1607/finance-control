@@ -33,7 +33,7 @@ const filmsReducer = (state = initialState, action) => {
         }
         case ADD_CATEGORY:
         {
-            let allId = ...state.category.map{id => id=id};
+            let allId = state.category.map(id => id=id);
             let newId = Math.max.apply(Math, allId)+1;
             console.log(newId);
              
