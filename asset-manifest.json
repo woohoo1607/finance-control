@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/finance-control/static/css/main.a49ad6a7.chunk.css",
+    "main.js": "/finance-control/static/js/main.cc3b2f75.chunk.js",
+    "main.js.map": "/finance-control/static/js/main.cc3b2f75.chunk.js.map",
+    "runtime~main.js": "/finance-control/static/js/runtime~main.1e3ef59e.js",
+    "runtime~main.js.map": "/finance-control/static/js/runtime~main.1e3ef59e.js.map",
+    "static/js/2.0dfb495d.chunk.js": "/finance-control/static/js/2.0dfb495d.chunk.js",
+    "static/js/2.0dfb495d.chunk.js.map": "/finance-control/static/js/2.0dfb495d.chunk.js.map",
+    "index.html": "/finance-control/index.html",
+    "precache-manifest.96ea9a32934edae7a32ed565aafaba0d.js": "/finance-control/precache-manifest.96ea9a32934edae7a32ed565aafaba0d.js",
+    "service-worker.js": "/finance-control/service-worker.js",
+    "static/css/main.a49ad6a7.chunk.css.map": "/finance-control/static/css/main.a49ad6a7.chunk.css.map",
+    "static/media/App.css": "/finance-control/static/media/background.266c44f4.jpg",
+    "static/media/logo.jpg": "/finance-control/static/media/logo.972ddd4d.jpg"
+  }
+}
