@@ -1,4 +1,4 @@
-.categoryForm {width: 100%; display: flex; flex-wrap: wrap; justify-content: center;}
+.categoryForm {width: 100%; display: flex; flex-wrap: wrap; justify-content: center; color: #D2E0E6;}
 
 @media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
 

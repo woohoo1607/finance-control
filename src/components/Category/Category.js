@@ -6,14 +6,14 @@ import styles from './Category.module.css';
 
 class Category extends React.Component {
 
-
 render() {
+console.log(this.props.home.category);
   
     return (
             <div className="center">
                 <AddCategory  addCategory={this.props.addCategory}/>
                 <div className={styles.categorys}>
-                    {this.props.home.category.map(category => <CategoryCard key={category.id} name={category.name}
+                    {this.props.home.category.map(category => <CategoryCard key={category.id} id={category.id} name={category.name}
                     categoryType={category.categoryType} putCategory={this.props.putCategory}
                     deleteCategory={this.props.deleteCategory}/>).reverse()}
                 </div>

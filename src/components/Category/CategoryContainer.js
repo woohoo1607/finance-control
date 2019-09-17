@@ -7,7 +7,7 @@ import {withRouter} from "react-router-dom";
 class CategoryContainer extends React.Component {
 
      render() {
-console.log(this.props.home);
+
         return (
                 <Category home={this.props.home}
                           addCategory={this.props.addCategory}

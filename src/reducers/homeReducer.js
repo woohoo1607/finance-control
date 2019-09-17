@@ -36,6 +36,11 @@ const filmsReducer = (state = initialState, action) => {
             let allId = [...state.category.map(id => id=id.id)];
             let newId = Math.max.apply(Math, allId)+1;
             action.category.id = newId;
+            /*if(!action.category) {
+                 action.category.categoryType = "spending";
+            } else {
+                action.category.categoryType = "incoming";
+            };*/
 
             return {
                 ...state,
@@ -55,7 +60,7 @@ const filmsReducer = (state = initialState, action) => {
         case DELETE_CATEGORY:
         {
             let newCategory = [...state.category];
-            let objIndex = newCategory.findIndex(obj => obj.id === action.category.id);
+            let objIndex = newCategory.findIndex(obj => obj.id === action.category);
             newCategory.splice(objIndex, 1);
             return {
                 ...state,

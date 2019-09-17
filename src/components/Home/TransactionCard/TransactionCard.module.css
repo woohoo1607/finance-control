@@ -1,5 +1,5 @@
 .spending, .incoming {margin:15px auto; padding:10px; background: url("../../../img/backTransaction.png"); width:500px; display: flex; flex-wrap: wrap; justify-content: space-between;}
-.spending {color: red; }
+.spending {color: red;}
 .incoming {color: green;}
 
 @media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
