@@ -7,8 +7,7 @@ import styles from './Category.module.css';
 class Category extends React.Component {
 
 render() {
-console.log(this.props.home.category);
-  
+  console.log(this.props.home.category);
     return (
             <div className="center">
                 <AddCategory  addCategory={this.props.addCategory}/>

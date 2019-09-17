@@ -33,14 +33,10 @@ const filmsReducer = (state = initialState, action) => {
         }
         case ADD_CATEGORY:
         {
+            console.log(action.category);
             let allId = [...state.category.map(id => id=id.id)];
             let newId = Math.max.apply(Math, allId)+1;
             action.category.id = newId;
-            /*if(!action.category) {
-                 action.category.categoryType = "spending";
-            } else {
-                action.category.categoryType = "incoming";
-            };*/
 
             return {
                 ...state,
@@ -51,7 +47,7 @@ const filmsReducer = (state = initialState, action) => {
         {
             let newCategory = [...state.category];
             let objIndex = newCategory.findIndex(obj => obj.id === action.category.id);
-            newCategory[objIndex] = action.category;
+            newCategory[objIndex].name = action.category.name;
             return {
                 ...state,
                 category: [...newCategory]
@@ -69,12 +65,22 @@ const filmsReducer = (state = initialState, action) => {
         }
         case ADD_DATA:
         {   
+            let newData = {};
+            let category = state.category.find(item => item.id === action.data.categoryId);
             let allId = [...state.data.map(id => id=id.id)];
             let newId = Math.max.apply(Math, allId)+1;
-            action.data.id = newId;
+            newData.id = newId;
+            newData.sum = action.data.sum;
+            newData.category = category.name;
+            if (category.categoryType === "spending") {
+                newData.refill = false;
+            } else {
+                newData.refill = true;
+            }
+
             return {
                 ...state,
-                data: [...state.data, ...[action.data]]
+                data: [...state.data, ...[newData]]
             };
         }
         case TOGGLE_IS_FETCHING:

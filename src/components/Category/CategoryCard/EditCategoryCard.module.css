@@ -1,7 +1,11 @@
-.transForm {width: 100%; display: flex; flex-wrap: wrap; justify-content: center;}
+.categoryForm {width: 100%; color: #D2E0E6;}
+input {margin: 0 auto;}
+.text {font-size: 18px !important;}
+.check {display: flex; flex-wrap: wrap; justify-content: center; color: #D2E0E6; margin-top: 3px;}
+.check input {margin: 3px 0 0 5px;}
 
 @media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
-.transForm {width: 98%;}
+
 }
 /*-------------------------------------*/
 @media only screen and (max-width: 911px) { /* 768<width<979 main 768*/

@@ -6,15 +6,15 @@ import styles from './AddTransaction.module.css';
 
 
 const AddForm = (props) => {
-    console.log(props.category);
+
     return (
             <form onSubmit={props.handleSubmit} >
                 <div className={styles.transForm}>
                 <Field name="category" component={Select} placeholder="Category" validate = {[reqiredField]}>
-                {}<option>gggg</option>
+                    <option></option>
+                    {props.category.map(category=> <option key={category.id}>{category.name}</option>)}
                 </Field>
                     <Field name="sum" component={Input} placeholder="Sum" validate = {[reqiredField]} />
-                    <Field name="refill" component={Input} placeholder="Refill" type="checkbox" />
                     <button type="submit">Add</button>
                 </div>
                                                
@@ -30,23 +30,27 @@ const AddTransaction = (props) => {
 
     const onSubmit = (formData) => {
         formData.sum = +formData.sum;
-        console.log(formData);
+        let categoryAdd = categArr.find(item=> item.name==formData.category);
+        formData.categoryId = categoryAdd.id
         props.addData(formData);
     };
-    let categ = props.category.map(category =>{
+    let categArr = props.category.map(category =>{
         let name;
+        let id;
         if (category.categoryType === "incoming") {
             name = "+" + category.name;
-            return {name};
+            id = category.id;
+            return {id, name};
         } else {
             name = "-" + category.name;
-            return {name};
+            id = category.id;
+            return {id, name};
         }
     });
 
     return (
             <div>
-                <AddReduxForm onSubmit={onSubmit} category={categ}/>
+                <AddReduxForm onSubmit={onSubmit} category={categArr}/>
             </div>
             );
 };

@@ -22,5 +22,22 @@ a:hover {text-decoration:none;}
 .App {background: url(img/background.jpg); background-size: cover; background-attachment: fixed;}
 header {height: 80px;}
 .logo {padding-top: 15px;}
-.center {width: 1170px; margin: 0 auto;}
+.center {width: 1100px; margin: 0 auto;}
 .logo {float: left; height: 80px;}
+
+@media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
+.center {width:98%;}
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 911px) { /* 768<width<979 main 768*/
+
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 767px) { /* 480<width<767 main 480*/
+
+}
+/*-------------------------------------*/
+@media only screen and (max-width: 479px) { /* 320<width<479 main 320*/
+
+    
+}
