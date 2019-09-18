@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field} from "redux-form";
+import {reduxForm, reset, Field} from "redux-form";
 import {Input} from "../FormsControls/FormsControls";
 import {reqiredField} from "../../validators/validators";
 import styles from './AddCategory.module.css';
@@ -20,8 +20,10 @@ const AddCategoryForm = (props) => {
             );
 };
 
+const afterSubmit = (result, dispatch) =>
+  dispatch(reset('addCategoryForm'));
 
-const AddCategoryReduxForm = reduxForm({form: 'addCategoryForm'})(AddCategoryForm);
+const AddCategoryReduxForm = reduxForm({form: 'addCategoryForm', onSubmitSuccess:afterSubmit})(AddCategoryForm);
 
 const AddCategory = (props) => {
 

@@ -5,13 +5,15 @@ import Logo from "./logo.jpg";
 
 const Header = () => {
     return (
-            <header className="center">
-                <NavLink to='/' className='logo'>
-                    <img src={Logo} width='70' height='50' alt="logo"/>
-                </NavLink>
-                <Navbar />
-                <div className="clr"></div>
-            </header>
+            <div className="center">
+                <header>
+                    <NavLink to='/' className='logo'>
+                        <img src={Logo} width='70' height='50' alt="logo"/>
+                    </NavLink>
+                    <Navbar />
+                    <div className="clr"></div>
+                </header>
+            </div>
             )
 }
 

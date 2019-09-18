@@ -1,7 +1,7 @@
 import React from 'react';
-import {reduxForm, Field} from "redux-form";
+import {reduxForm, reset, Field} from "redux-form";
 import {Input, Select} from "../FormsControls/FormsControls";
-import {reqiredField} from "../../validators/validators";
+import {reqiredField, numbers} from "../../validators/validators";
 import styles from './AddTransaction.module.css';
 
 
@@ -14,7 +14,7 @@ const AddForm = (props) => {
                     <option></option>
                     {props.category.map(category=> <option key={category.id}>{category.name}</option>)}
                 </Field>
-                    <Field name="sum" component={Input} placeholder="Sum" validate = {[reqiredField]} />
+                    <Field name="sum" component={Input} placeholder="Sum" validate = {[reqiredField, numbers]} />
                     <button type="submit">Add</button>
                 </div>
                                                
@@ -22,9 +22,10 @@ const AddForm = (props) => {
 
             );
 };
+const afterSubmit = (result, dispatch) =>
+  dispatch(reset('addForm'));
 
-
-const AddReduxForm = reduxForm({form: 'addForm'})(AddForm);
+const AddReduxForm = reduxForm({form: 'addForm', onSubmitSuccess:afterSubmit})(AddForm);
 
 const AddTransaction = (props) => {
 
