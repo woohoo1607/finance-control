@@ -7,21 +7,22 @@ import styles from './Category.module.css';
 class Category extends React.Component {
 
 render() {
-    
     let allCategorys = this.props.home.category.map(category => {
-        let categoryType;
-        console.log(category.categoryType);
-        categoryType=category.categoryType;
+        return category.categoryType;
     });
-    console.log(allCategorys);
-
+    function a (value, index, self) {
+        return self.indexOf(value) === index;
+    }
+    let uniqueCategorys = allCategorys.filter(a);
+    console.log(uniqueCategorys);
+    
     return (
             <div className="center">
                 <AddCategory  addCategory={this.props.addCategory}/>
                 <div className={styles.categorys}>
                     {this.props.home.category.map(category => <CategoryCard key={category.id} id={category.id} name={category.name}
                     categoryType={category.categoryType} putCategory={this.props.putCategory}
-                    deleteCategory={this.props.deleteCategory}/>).reverse()}
+                    deleteCategory={this.props.deleteCategory} uniqueCategorys={uniqueCategorys}/>).reverse()}
                 </div>
             </div>
             );

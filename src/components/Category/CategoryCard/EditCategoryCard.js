@@ -30,7 +30,7 @@ const EditCategoryForm = (props) => {
 const EditCategoryReduxForm = reduxForm({form: 'editCategoryForm'})(EditCategoryForm);
 
 const EditCategoryCard = (props) => {
-
+console.log(props.uniqueCategorys);
     const onSubmit = (formData) => {
         formData.id = props.id;
         props.put(formData);
