@@ -43,7 +43,7 @@ class CategoryCard extends React.Component {
     delCat = (id) => {
         this.props.deleteCategory(id);
     };
-    render () {
+    render () {console.log(this.props);
     return (
             <div>
             {this.state.editMode && 
@@ -51,6 +51,7 @@ class CategoryCard extends React.Component {
                     <EditCategoryCard name={this.state.data.name} 
                                       id={this.state.data.id}
                                       put={this.putCat}
+                                      categoryType={this.props.categoryType}
                                       deactivatedEditMode={this.deactivatedEditMode}
                                       />
                 </div>}

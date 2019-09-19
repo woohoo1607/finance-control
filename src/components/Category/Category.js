@@ -7,6 +7,13 @@ import styles from './Category.module.css';
 class Category extends React.Component {
 
 render() {
+    
+    let allCategorys = this.props.home.category.map(category => {
+        let categoryType;
+        console.log(category.categoryType);
+        categoryType=category.categoryType;
+    });
+    console.log(allCategorys);
 
     return (
             <div className="center">

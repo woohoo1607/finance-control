@@ -28,7 +28,6 @@ const AddCategoryReduxForm = reduxForm({form: 'addCategoryForm', onSubmitSuccess
 const AddCategory = (props) => {
 
     const onSubmit = (formData) => {
-        console.log(formData);
         if(!formData.categoryType){
             formData.categoryType = "spending";
         } else {

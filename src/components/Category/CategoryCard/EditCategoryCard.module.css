@@ -3,6 +3,7 @@ input {margin: 0 auto;}
 .text {font-size: 18px !important;}
 .check {display: flex; flex-wrap: wrap; justify-content: center; color: #D2E0E6; margin-top: 3px;}
 .check input {margin: 3px 0 0 5px;}
+.inputs {display: flex; flex-wrap: wrap; justify-content: center;}
 
 @media only screen and (max-width: 1099px) { /* 912<width<1099 main 912*/
 
