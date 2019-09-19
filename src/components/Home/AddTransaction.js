@@ -31,8 +31,8 @@ const AddTransaction = (props) => {
 
     const onSubmit = (formData) => {
         formData.sum = +formData.sum;
-        let categoryAdd = categArr.find(item=> item.name==formData.category);
-        formData.categoryId = categoryAdd.id
+        let categoryAdd = categArr.find(item=> item.name===formData.category);
+        formData.categoryId = categoryAdd.id;
         props.addData(formData);
     };
     let categArr = props.category.map(category =>{

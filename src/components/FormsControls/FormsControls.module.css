@@ -1,7 +1,7 @@
 .formControl {
     display: flex; justify-content: space-between;
 }
-.formControl.error input {
+.formControl.error input, .formControl.error select {
     border: solid red 2px;
 }
 .formControl.error span {
@@ -22,4 +22,5 @@ span {
     .formControl {display: block;}
     input {width:80%; margin: 5px 0;}
     select {width:80%; margin: 5px 0;}
+    span {margin: 0 auto;}
 }
