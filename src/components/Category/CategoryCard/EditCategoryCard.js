@@ -13,8 +13,7 @@ const EditCategoryForm = (props) => {
                     <div className={styles.inputs}>
                         <Field name="name" component={Input} placeholder="Name" validate = {[reqiredField]} />
                         <Field name="categoryType" component={Select} placeholder="CategoryType" validate = {[reqiredField]}>
-                            <option></option>
-                            <option></option>
+                            {props.uniqueCategorys.map((category, index)=> <option key={index}>{category}</option>)}
                         </Field>
                     </div>
                     <button type="submit">Save</button>
@@ -30,7 +29,12 @@ const EditCategoryForm = (props) => {
 const EditCategoryReduxForm = reduxForm({form: 'editCategoryForm'})(EditCategoryForm);
 
 const EditCategoryCard = (props) => {
-console.log(props.uniqueCategorys);
+      
+    let copyUniqueCategorys = [...props.uniqueCategorys];
+    let objIndex = copyUniqueCategorys.findIndex(obj => obj === props.categoryType);
+    let selfCategory = copyUniqueCategorys.splice(objIndex,1);
+    let selfUniqueCategorys = [...selfCategory, ...copyUniqueCategorys];
+
     const onSubmit = (formData) => {
         formData.id = props.id;
         props.put(formData);
@@ -40,8 +44,9 @@ console.log(props.uniqueCategorys);
     return (
             <div>
                 <EditCategoryReduxForm onSubmit={onSubmit} 
-                                       initialValues={{name: props.name}}
-                                       cancel={props.deactivatedEditMode}/>
+                                       initialValues={{name: props.name, categoryType: selfCategory[0]}}
+                                       cancel={props.deactivatedEditMode}
+                                       uniqueCategorys={selfUniqueCategorys}/>
             </div>
             );
 };

@@ -6,6 +6,22 @@ import styles from './Category.module.css';
 
 class Category extends React.Component {
 
+    state = {
+        isActiveEdit: false
+    };
+    
+    activeteEdit = () => {
+        this.setState( {
+            isActiveEdit: true
+        });
+    }
+    
+    deactiveteEdit = () => {
+        this.setState( {
+            isActiveEdit: false
+        });
+    }
+
 render() {
     let allCategorys = this.props.home.category.map(category => {
         return category.categoryType;
@@ -14,7 +30,6 @@ render() {
         return self.indexOf(value) === index;
     }
     let uniqueCategorys = allCategorys.filter(a);
-    console.log(uniqueCategorys);
     
     return (
             <div className="center">
@@ -22,7 +37,9 @@ render() {
                 <div className={styles.categorys}>
                     {this.props.home.category.map(category => <CategoryCard key={category.id} id={category.id} name={category.name}
                     categoryType={category.categoryType} putCategory={this.props.putCategory}
-                    deleteCategory={this.props.deleteCategory} uniqueCategorys={uniqueCategorys}/>).reverse()}
+                    deleteCategory={this.props.deleteCategory} uniqueCategorys={uniqueCategorys}
+                    isActiveEdit={this.state.isActiveEdit} activeteEdit={this.activeteEdit}
+                    deactiveteEdit={this.deactiveteEdit}/>).reverse()}
                 </div>
             </div>
             );

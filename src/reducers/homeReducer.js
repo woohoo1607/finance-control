@@ -47,6 +47,7 @@ const filmsReducer = (state = initialState, action) => {
             let newCategory = [...state.category];
             let objIndex = newCategory.findIndex(obj => obj.id === action.category.id);
             newCategory[objIndex].name = action.category.name;
+            newCategory[objIndex].categoryType = action.category.categoryType;
             return {
                 ...state,
                 category: [...newCategory]

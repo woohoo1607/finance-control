@@ -20,17 +20,21 @@ class CategoryCard extends React.Component {
                     id: this.props.id,
                     name: this.props.name
                 }
-            })
+            });
         }
     }
     
     activatedEditMode = () => {
-        this.setState({
-            editMode: true
-        });
+        if (!this.props.isActiveEdit) {
+            this.props.activeteEdit();
+            this.setState({
+                editMode: true
+            });
+        };
     }
     
     deactivatedEditMode = () => {
+        this.props.deactiveteEdit();
         this.setState({
             editMode: false
         });

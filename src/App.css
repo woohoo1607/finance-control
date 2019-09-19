@@ -62,7 +62,8 @@ header {margin-left: 30%;}
 }
 /*-------------------------------------*/
 @media only screen and (max-width: 767px) { /* 480<width<767 main 480*/
-header {margin-left: 8%;}
+header {margin-left: 8%; height: auto; margin: 0 auto;}
+.logo {float: none;}
 }
 /*-------------------------------------*/
 @media only screen and (max-width: 479px) { /* 320<width<479 main 320*/
