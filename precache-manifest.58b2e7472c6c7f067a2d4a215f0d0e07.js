@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c720f26fa4fd01c4423e56dffea60fab",
+    "revision": "50f96faee7ea6af680ced94436bf6acb",
     "url": "/finance-control/index.html"
   },
   {
-    "revision": "16a2e49c52e9033de313",
-    "url": "/finance-control/static/css/main.a39c5352.chunk.css"
+    "revision": "624f7bb9d241b043efc5",
+    "url": "/finance-control/static/css/main.e9696a98.chunk.css"
   },
   {
     "revision": "3eeb4fc781f0d4d384f2",
     "url": "/finance-control/static/js/2.53ecdb22.chunk.js"
   },
   {
-    "revision": "16a2e49c52e9033de313",
-    "url": "/finance-control/static/js/main.877803a2.chunk.js"
+    "revision": "624f7bb9d241b043efc5",
+    "url": "/finance-control/static/js/main.63d4c20f.chunk.js"
   },
   {
     "revision": "95388d0ef4141dd77fc4",
