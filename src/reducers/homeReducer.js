@@ -1,11 +1,8 @@
-//import {filmsAPI} from "../api/api";
-
 const SET_INVOICE = "SET_INVOICE";
 const ADD_DATA = "ADD_DATA";
 const ADD_CATEGORY = "ADD_CATEGORY";
 const PUT_CATEGORY = "PUT_CATEGORY";
 const DELETE_CATEGORY = "DELETE_CATEGORY";
-const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 
 let initialState = {
@@ -20,7 +17,7 @@ let initialState = {
     isFetching: false
 };
 
-const filmsReducer = (state = initialState, action) => {
+const homeReducer = (state = initialState, action) => {
 
     switch (action.type) {
         
@@ -83,12 +80,6 @@ const filmsReducer = (state = initialState, action) => {
                 data: [...state.data, ...[newData]]
             };
         }
-        case TOGGLE_IS_FETCHING:
-        {
-            return {
-                ...state, isFetching: action.isFetching
-            };
-        }
         default:
             return state;
 }
@@ -109,20 +100,5 @@ export const putCategory = (category) =>
 export const deleteCategory = (category) =>
     ({type: DELETE_CATEGORY, category: category});
 
-export const toggleIsFetching = (isFetching) =>
-    ({type: TOGGLE_IS_FETCHING, isFetching});
 
-/*export const getFilms = (currentPage) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        filmsAPI.getFilms(currentPage).then(response => {
-            dispatch(toggleIsFetching(false));
-            dispatch(setFilms(response.results));
-            dispatch(setCurrentPage(response.page));
-            dispatch(setTotalPages(response.total_pages));
-        });  
-    };
-};
-*/
-
-export default filmsReducer;
+export default homeReducer;

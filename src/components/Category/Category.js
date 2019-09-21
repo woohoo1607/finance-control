@@ -2,7 +2,6 @@ import React from 'react';
 import CategoryCard from './CategoryCard/CategoryCard';
 import AddCategory from './AddCategory';
 import styles from './Category.module.css';
-//import Preloader from "../Preloader";
 
 class Category extends React.Component {
 

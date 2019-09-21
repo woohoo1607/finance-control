@@ -2,7 +2,6 @@ import React from 'react';
 import TransactionCard from './TransactionCard/TransactionCard';
 import AddTransaction from './AddTransaction';
 import styles from './Home.module.css';
-//import Preloader from "../Preloader";
 
 class Home extends React.Component {
 
